@@ -1,323 +1,515 @@
-/* ===========================
-   GOOGLE FONT
-=========================== */
+/* =========================
+   BASIC SETTINGS
+========================= */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-    scroll-behavior:smooth;
+    font-family:Arial, Helvetica, sans-serif;
 }
-
-/* ===========================
-   BODY
-=========================== */
 
 body{
-    background:linear-gradient(135deg,#eaf4ff,#dbeafe,#c7d2fe);
+    background:linear-gradient(135deg,#eef5ff,#dbeafe);
     color:#333;
-    line-height:1.6;
 }
 
-/* ===========================
-   HEADER
-=========================== */
+
+/* =========================
+   HEADER / NAVBAR
+========================= */
 
 header{
+
     width:100%;
-    background:linear-gradient(90deg,#003366,#0056b3);
-    color:#fff;
+    background:#082b5c;
+    color:white;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:18px 8%;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 5px 15px rgba(0,0,0,.2);
+
+    padding:20px 8%;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+
 }
+
 
 .logo h2{
-    font-size:30px;
-    font-weight:700;
+
+    font-size:28px;
+    color:white;
+
 }
+
 
 nav ul{
+
     display:flex;
     list-style:none;
+
 }
+
 
 nav ul li{
+
     margin:0 18px;
+
 }
+
 
 nav ul li a{
+
     color:white;
     text-decoration:none;
-    font-size:17px;
-    transition:.3s;
+    font-size:16px;
+
+    transition:0.3s;
+
 }
+
 
 nav ul li a:hover{
+
     color:#ffd43b;
+
 }
 
-/* ===========================
-   BUTTON
-=========================== */
 
-.btn{
+/* For other pages navigation */
+
+nav a{
+
+    color:white;
     text-decoration:none;
+    margin:15px;
+
+}
+
+
+.apply{
+
     background:#ffd43b;
-    color:#003366;
-    padding:12px 28px;
+    color:#082b5c;
+
+    padding:12px 25px;
+
     border-radius:30px;
-    font-weight:600;
-    transition:.3s;
+
+    font-weight:bold;
+
 }
 
-.btn:hover{
-    background:#fff;
-    transform:translateY(-3px);
-}
 
-/* ===========================
-   HERO
-=========================== */
+/* =========================
+   HERO SECTION
+========================= */
+
 
 .hero{
+
     width:90%;
     margin:50px auto;
-    background:#fff;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
+
+    background:white;
+
     padding:60px;
-    border-radius:20px;
-    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+    border-radius:25px;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,0.15);
+
 }
 
-.hero-text{
+
+
+.hero-content{
+
     width:50%;
+
 }
 
-.hero-text h1{
-    font-size:50px;
-    color:#003366;
-    margin-bottom:20px;
+
+
+.welcome{
+
+    color:#2563eb;
+    font-weight:bold;
+
+    letter-spacing:1px;
+
 }
 
-.hero-text p{
+
+
+.hero h1{
+
+    font-size:48px;
+
+    color:#082b5c;
+
+    margin:20px 0;
+
+    line-height:1.2;
+
+}
+
+
+
+.hero p{
+
     font-size:18px;
-    margin-bottom:30px;
+
     color:#555;
+
+    margin-bottom:25px;
+
 }
+
+
+
+.button{
+
+    display:inline-block;
+
+    background:#2563eb;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:14px 30px;
+
+    border-radius:30px;
+
+    transition:.3s;
+
+}
+
+
+
+.button:hover{
+
+    background:#082b5c;
+
+    transform:translateY(-5px);
+
+}
+
+
+
 
 .hero-image{
+
     width:45%;
+
 }
+
+
 
 .hero-image img{
+
     width:100%;
-    border-radius:15px;
+
+    border-radius:20px;
+
     box-shadow:0 10px 25px rgba(0,0,0,.2);
+
 }
 
-/* ===========================
-   FEATURES
-=========================== */
+
+
+/* =========================
+   FEATURE CARDS
+========================= */
+
 
 .features{
+
     width:90%;
+
     margin:40px auto;
+
     display:flex;
-    gap:30px;
-    justify-content:center;
+
+    gap:25px;
+
 }
+
+
 
 .card{
-    background:white;
-    padding:30px;
+
     flex:1;
-    border-radius:15px;
+
+    background:white;
+
+    padding:35px;
+
     text-align:center;
+
+    border-radius:20px;
+
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.12);
+
+
     transition:.3s;
-    box-shadow:0 10px 25px rgba(0,0,0,.1);
+
 }
+
+
 
 .card:hover{
+
     transform:translateY(-10px);
-    box-shadow:0 20px 40px rgba(0,86,179,.2);
+
 }
+
+
 
 .card h3{
-    color:#003366;
+
+    color:#082b5c;
+
     margin-bottom:15px;
+
 }
 
-/* ===========================
-   PAGE
-=========================== */
+
+
+
+/* =========================
+   INNER PAGES
+========================= */
+
 
 .page{
-    width:90%;
-    margin:40px auto;
+
+    width:85%;
+
+    margin:50px auto;
+
     background:white;
+
     padding:50px;
+
     border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,.1);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.15);
+
 }
+
+
 
 .page h1{
+
     text-align:center;
-    margin-bottom:25px;
-    color:#003366;
+
+    color:#082b5c;
+
+    margin-bottom:30px;
+
 }
 
-/* ===========================
+
+
+/* =========================
    COURSES
-=========================== */
+========================= */
+
 
 .course{
-    background:#f8fbff;
-    border-left:6px solid #0056b3;
+
+    background:#eff6ff;
+
     padding:25px;
+
     margin:20px 0;
-    border-radius:10px;
+
+    border-left:6px solid #2563eb;
+
+    border-radius:12px;
+
     transition:.3s;
+
 }
+
+
 
 .course:hover{
-    transform:translateX(8px);
+
+    transform:translateX(10px);
+
 }
 
-/* ===========================
-   GALLERY
-=========================== */
 
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
 
-.gallery img{
-    width:100%;
-    border-radius:12px;
-    transition:.4s;
-}
 
-.gallery img:hover{
-    transform:scale(1.05);
-}
-
-/* ===========================
+/* =========================
    CONTACT FORM
-=========================== */
+========================= */
+
 
 form{
-    width:100%;
+
     max-width:600px;
+
     margin:auto;
+
 }
+
+
 
 input,
 textarea{
+
     width:100%;
+
     padding:15px;
+
     margin:12px 0;
+
     border:1px solid #ccc;
-    border-radius:8px;
+
+    border-radius:10px;
+
     font-size:16px;
+
 }
+
+
 
 textarea{
+
     height:150px;
-    resize:none;
+
 }
+
+
 
 button{
-    background:#0056b3;
-    color:white;
-    padding:15px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
+
     width:100%;
+
+    padding:15px;
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
     font-size:18px;
-    transition:.3s;
+
+    cursor:pointer;
+
 }
+
+
 
 button:hover{
-    background:#003366;
+
+    background:#082b5c;
+
 }
 
-/* ===========================
+
+
+/* =========================
    FOOTER
-=========================== */
+========================= */
+
 
 footer{
-    margin-top:50px;
-    background:#003366;
+
+    background:#082b5c;
+
     color:white;
+
     text-align:center;
+
     padding:25px;
+
+    margin-top:50px;
+
 }
 
-/* ===========================
-   RESPONSIVE
-=========================== */
 
-@media(max-width:992px){
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+
+@media(max-width:900px){
+
 
 header{
+
     flex-direction:column;
-    padding:20px;
+
 }
+
 
 nav ul{
+
     margin:20px 0;
-    flex-wrap:wrap;
-    justify-content:center;
+
 }
+
+
 
 .hero{
+
     flex-direction:column;
+
     text-align:center;
+
 }
 
-.hero-text{
+
+
+.hero-content,
+.hero-image{
+
     width:100%;
+
 }
+
+
 
 .hero-image{
-    width:100%;
-    margin-top:40px;
+
+    margin-top:30px;
+
 }
+
+
 
 .features{
+
     flex-direction:column;
-}
 
 }
 
-@media(max-width:600px){
 
-.hero-text h1{
-    font-size:34px;
+
+.hero h1{
+
+    font-size:35px;
+
 }
 
-.logo h2{
-    font-size:24px;
-}
-
-nav ul li{
-    margin:8px;
-}
-
-.page{
-    padding:25px;
-}
 
 }
