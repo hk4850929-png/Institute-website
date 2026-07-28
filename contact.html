@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact EduTech Institute — apply now, get admission guidance, find our address, phone, email and location on the map." />
+  <title>Contact — EduTech Institute</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="logo"><span class="logo__mark"><i class="fa-solid fa-graduation-cap"></i></span> Edu<b>Tech</b></a>
+      <nav class="nav__menu">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="about.html" class="nav__link">About</a>
+        <a href="courses.html" class="nav__link">Courses</a>
+        <a href="gallery.html" class="nav__link">Gallery</a>
+        <a href="contact.html" class="nav__link active">Contact</a>
+      </nav>
+      <div class="nav__actions">
+        <a href="#contact-form" class="btn btn--accent btn--sm">Apply Now <i class="fa-solid fa-arrow-right"></i></a>
+        <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <div class="drawer">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="courses.html">Courses</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a>
+    <a href="#contact-form" class="btn btn--accent">Apply Now <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+
+  <section class="page-hero">
+    <div class="container page-hero__inner">
+      <div class="crumbs"><a href="index.html">Home</a> <i class="fa-solid fa-chevron-right" style="font-size:.6rem"></i> <span>Contact</span></div>
+      <h1>Let’s talk about your future.</h1>
+      <p>Have a question about admissions, fees or courses? Fill out the form and our team will get back to you within 24 hours.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-grid">
+      <!-- Info -->
+      <div class="contact-info" data-reveal>
+        <div class="info-card"><i class="fa-solid fa-location-dot"></i><div><h4>Visit Us</h4><p>221 Knowledge Park, Sector 62,<br/>Bengaluru, Karnataka 560103, India</p></div></div>
+        <div class="info-card"><i class="fa-solid fa-phone"></i><div><h4>Call Us</h4><p><a href="tel:+918045678900">+91 80 4567 8900</a><br/><a href="tel:+919876543210">+91 98765 43210</a></p></div></div>
+        <div class="info-card"><i class="fa-solid fa-envelope"></i><div><h4>Email Us</h4><p><a href="mailto:admissions@edutech.edu">admissions@edutech.edu</a><br/><a href="mailto:hello@edutech.edu">hello@edutech.edu</a></p></div></div>
+        <div class="info-card"><i class="fa-solid fa-clock"></i><div><h4>Office Hours</h4><p>Mon – Sat: 9:00 AM – 7:00 PM<br/>Sunday: Closed</p></div></div>
+      </div>
+
+      <!-- Form -->
+      <form class="form" id="contact-form" novalidate data-reveal data-reveal-delay="1">
+        <div class="field">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Jane Doe" data-testid="contact-name" />
+          <span class="err-msg">Please enter your name.</span>
+        </div>
+        <div class="field">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="jane@email.com" data-testid="contact-email" />
+          <span class="err-msg">Please enter a valid email.</span>
+        </div>
+        <div class="field">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" data-testid="contact-phone" />
+          <span class="err-msg">Please enter a valid phone number.</span>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us which course you’re interested in..." data-testid="contact-message"></textarea>
+          <span class="err-msg">Message should be at least 10 characters.</span>
+        </div>
+        <button type="submit" class="btn btn--accent" style="width:100%;justify-content:center" data-testid="contact-submit">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+        <div class="form-note"><i class="fa-solid fa-circle-check"></i><span>Thank you! Our team will contact you soon.</span></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="map-embed" data-reveal>
+        <iframe title="EduTech Institute location" loading="lazy" allowfullscreen
+          src="https://www.google.com/maps?q=Bengaluru%20Sector%2062&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="index.html" class="logo"><span class="logo__mark"><i class="fa-solid fa-graduation-cap"></i></span> Edu<b>Tech</b></a>
+          <p>A modern institute preparing ambitious learners for the careers of tomorrow through practical, project-driven education.</p>
+          <div class="socials"><a href="#"><i class="fa-brands fa-facebook-f"></i></a><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-linkedin-in"></i></a><a href="#"><i class="fa-brands fa-youtube"></i></a></div>
+        </div>
+        <div><h5>Quick Links</h5><div class="footer__links"><a href="index.html">Home</a><a href="about.html">About</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a></div></div>
+        <div><h5>Courses</h5><div class="footer__links"><a href="courses.html">Web Development</a><a href="courses.html">Data Science</a><a href="courses.html">UI/UX Design</a><a href="courses.html">Cyber Security</a></div></div>
+        <div><h5>Newsletter</h5><p>Get admission updates, scholarships and event invites in your inbox.</p>
+          <form class="newsletter"><input type="email" placeholder="Your email address" aria-label="Email" required /><button type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button></form>
+        </div>
+      </div>
+      <div class="footer__bottom"><span>&copy; <span id="year">2026</span> EduTech Institute. All rights reserved.</span><span>Crafted with care · Privacy · Terms</span></div>
+    </div>
+  </footer>
+  <button class="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
