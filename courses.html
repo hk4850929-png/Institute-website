@@ -3,15 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduTech Institute</title>
-    <!-- Link to your CSS design system -->
+    <title>Courses - EduTech Institute</title>
     <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome for the UI icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- HEADER & NAVIGATION -->
     <header>
         <div class="logo">
             <i class="fa-solid fa-graduation-cap logo-icon"></i>
@@ -22,9 +19,9 @@
         </div>
         <nav>
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="courses.html">Courses</a></li>
+                <li><a href="courses.html" class="active">Courses</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -32,45 +29,32 @@
         <a href="apply.html" class="btn">Apply Now</a>
     </header>
 
-    <!-- MAIN CONTENT -->
-    <main>
-        <!-- HERO SECTION -->
-        <section class="hero">
-            <div class="hero-content">
-                <p class="subtitle">WELCOME TO EDUTECH INSTITUTE</p>
-                <h1>Building Knowledge,<br>Shaping Futures</h1>
-                <p>We provide quality education and practical knowledge to help students achieve their goals.</p>
-                <a href="courses.html" class="btn explore-btn">Explore Courses</a>
-            </div>
-            <div class="hero-image">
-                <!-- Replace src with your actual building image path before GitHub upload -->
-                <img src="https://via.placeholder.com/600x400?text=Institute+Building+Image" alt="EduTech Institute Building">
-            </div>
-        </section>
-
-        <!-- FEATURES SECTION -->
+    <main style="background-color: var(--bg-light); padding-bottom: 4rem;">
+        <div style="text-align: center; padding: 3rem 5% 1rem;">
+            <h1 style="color: var(--primary-blue); font-size: 2.5rem;">Our Programs</h1>
+            <p>Explore our industry-relevant curriculum designed for your success.</p>
+        </div>
+        
+        <!-- Reusing the features layout for courses -->
         <section class="features">
             <div class="feature-card">
-                <i class="fa-solid fa-graduation-cap icon"></i>
-                <h3>Expert Faculty</h3>
-                <p>Learn from experienced and qualified faculty.</p>
+                <i class="fa-solid fa-code icon"></i>
+                <h3>Frontend Development</h3>
+                <p>Master HTML, CSS, JavaScript, and modern frameworks to build interactive web experiences.</p>
             </div>
-            
             <div class="feature-card">
-                <i class="fa-solid fa-book-open icon"></i>
-                <h3>Quality Education</h3>
-                <p>Industry-relevant courses with practical learning.</p>
+                <i class="fa-solid fa-database icon"></i>
+                <h3>Backend Engineering</h3>
+                <p>Learn server-side programming, database management, and API integration.</p>
             </div>
-            
             <div class="feature-card">
-                <i class="fa-solid fa-user-group icon"></i>
-                <h3>Bright Future</h3>
-                <p>Preparing students for successful careers.</p>
+                <i class="fa-solid fa-pen-nib icon"></i>
+                <h3>UI/UX Design</h3>
+                <p>Create intuitive and beautiful user interfaces with industry-standard design tools.</p>
             </div>
         </section>
     </main>
 
-    <!-- FOOTER -->
     <footer>
         <p>&copy; 2026 EduTech Institute. All rights reserved.</p>
     </footer>
