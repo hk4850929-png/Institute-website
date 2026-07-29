@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - EduTech Institute</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-graduation-cap logo-icon"></i>
+            <div>
+                <strong>EduTech Institute</strong>
+                <span>Excellence in Education</span>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="#apply" class="btn btn-primary">Apply Now</a>
+    </header>
+
+    <section class="hero" style="background-color: var(--bg-light); text-align: center; justify-content: center; padding: 40px 5%;">
+        <div class="hero-content">
+            <h1>Get in Touch</h1>
+            <p class="description">Have questions? We are here to help you take the next step.</p>
+        </div>
+    </section>
+
+    <section style="padding: 60px 5%; max-width: 600px; margin: 0 auto;">
+        <form style="display: flex; flex-direction: column; gap: 20px; background: var(--white); padding: 30px; border-radius: var(--border-radius); box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            <div style="display: flex; flex-direction: column; gap: 5px;">
+                <label for="name" style="font-weight: 600;">Full Name</label>
+                <input type="text" id="name" placeholder="John Doe" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+            </div>
+            
+            <div style="display: flex; flex-direction: column; gap: 5px;">
+                <label for="email" style="font-weight: 600;">Email Address</label>
+                <input type="email" id="email" placeholder="john@example.com" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 5px;">
+                <label for="message" style="font-weight: 600;">Message</label>
+                <textarea id="message" rows="5" placeholder="How can we help you?" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; resize: vertical;"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; border: none;">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 EduTech Institute. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
