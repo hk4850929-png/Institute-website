@@ -1,17 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduTech Institute</title>
-    <!-- Link to your CSS design system -->
+    <title>Contact - EduTech Institute</title>
     <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome for the UI icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- HEADER & NAVIGATION -->
     <header>
         <div class="logo">
             <i class="fa-solid fa-graduation-cap logo-icon"></i>
@@ -22,55 +20,35 @@
         </div>
         <nav>
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="courses.html">Courses</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
         </nav>
         <a href="apply.html" class="btn">Apply Now</a>
     </header>
 
-    <!-- MAIN CONTENT -->
-    <main>
-        <!-- HERO SECTION -->
-        <section class="hero">
-            <div class="hero-content">
-                <p class="subtitle">WELCOME TO EDUTECH INSTITUTE</p>
-                <h1>Building Knowledge,<br>Shaping Futures</h1>
-                <p>We provide quality education and practical knowledge to help students achieve their goals.</p>
-                <a href="courses.html" class="btn explore-btn">Explore Courses</a>
+    <main style="padding: 4rem 5%; background-color: var(--bg-light); min-height: 60vh; display: flex; justify-content: center;">
+        <div style="background: var(--bg-white); padding: 3rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); width: 100%; max-width: 600px;">
+            <h1 style="color: var(--primary-blue); font-size: 2rem; margin-bottom: 1.5rem;">Get in Touch</h1>
+            
+            <div style="margin-bottom: 2rem;">
+                <p><strong>Email:</strong> info@edutechinstitute.edu</p>
+                <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                <p><strong>Address:</strong> 123 Education Ave, Tech City, ST 90210</p>
             </div>
-            <div class="hero-image">
-                <!-- Replace src with your actual building image path before GitHub upload -->
-                <img src="https://via.placeholder.com/600x400?text=Institute+Building+Image" alt="EduTech Institute Building">
-            </div>
-        </section>
 
-        <!-- FEATURES SECTION -->
-        <section class="features">
-            <div class="feature-card">
-                <i class="fa-solid fa-graduation-cap icon"></i>
-                <h3>Expert Faculty</h3>
-                <p>Learn from experienced and qualified faculty.</p>
-            </div>
-            
-            <div class="feature-card">
-                <i class="fa-solid fa-book-open icon"></i>
-                <h3>Quality Education</h3>
-                <p>Industry-relevant courses with practical learning.</p>
-            </div>
-            
-            <div class="feature-card">
-                <i class="fa-solid fa-user-group icon"></i>
-                <h3>Bright Future</h3>
-                <p>Preparing students for successful careers.</p>
-            </div>
-        </section>
+            <form action="#" method="POST" style="display: flex; flex-direction: column; gap: 1rem;">
+                <input type="text" placeholder="Your Name" required style="padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-family: var(--font-main);">
+                <input type="email" placeholder="Your Email" required style="padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-family: var(--font-main);">
+                <textarea placeholder="Your Message" rows="5" required style="padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-family: var(--font-main); resize: vertical;"></textarea>
+                <button type="submit" class="btn" style="border: none; cursor: pointer;">Send Message</button>
+            </form>
+        </div>
     </main>
 
-    <!-- FOOTER -->
     <footer>
         <p>&copy; 2026 EduTech Institute. All rights reserved.</p>
     </footer>
