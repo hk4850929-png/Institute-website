@@ -3,76 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduTech Institute</title>
-    <!-- Link to your CSS design system -->
-    <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome for the UI icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Application Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        .form-container {
+            max-width: 400px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Ensures padding doesn't affect width */
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #success-message {
+            color: green;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- HEADER & NAVIGATION -->
-    <header>
-        <div class="logo">
-            <i class="fa-solid fa-graduation-cap logo-icon"></i>
-            <div class="logo-text">
-                <h2>EduTech Institute</h2>
-                <p>Excellence in Education</p>
-            </div>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="courses.html">Courses</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <a href="apply.html" class="btn">Apply Now</a>
-    </header>
+    <h2>Apply Now</h2>
 
-    <!-- MAIN CONTENT -->
-    <main>
-        <!-- HERO SECTION -->
-        <section class="hero">
-            <div class="hero-content">
-                <p class="subtitle">WELCOME TO EDUTECH INSTITUTE</p>
-                <h1>Building Knowledge,<br>Shaping Futures</h1>
-                <p>We provide quality education and practical knowledge to help students achieve their goals.</p>
-                <a href="courses.html" class="btn explore-btn">Explore Courses</a>
-            </div>
-            <div class="hero-image">
-                <!-- Replace src with your actual building image path before GitHub upload -->
-                <img src="institute.png">
-            </div>
-        </section>
+    <div class="form-container">
+        <!-- The method is set to GET to avoid the 405 error -->
+        <form action="index.html" method="GET">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
 
-        <!-- FEATURES SECTION -->
-        <section class="features">
-            <div class="feature-card">
-                <i class="fa-solid fa-graduation-cap icon"></i>
-                <h3>Expert Faculty</h3>
-                <p>Learn from experienced and qualified faculty.</p>
-            </div>
-            
-            <div class="feature-card">
-                <i class="fa-solid fa-book-open icon"></i>
-                <h3>Quality Education</h3>
-                <p>Industry-relevant courses with practical learning.</p>
-            </div>
-            
-            <div class="feature-card">
-                <i class="fa-solid fa-user-group icon"></i>
-                <h3>Bright Future</h3>
-                <p>Preparing students for successful careers.</p>
-            </div>
-        </section>
-    </main>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2026 EduTech Institute. All rights reserved.</p>
-    </footer>
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+
+    <!-- This is where the success message will appear after submitting -->
+    <div id="success-message"></div>
+
+    <!-- JavaScript to grab the submitted data and show it on the screen -->
+    <script>
+        // Check the URL for the submitted data
+        const urlParams = new URLSearchParams(window.location.search);
+        const submittedName = urlParams.get('name');
+        
+        // If a name was submitted, display the success message
+        if (submittedName) {
+            const messageDiv = document.getElementById('success-message');
+            messageDiv.innerHTML = "Success! Application received for: " + submittedName;
+        }
+    </script>
 
 </body>
 </html>
