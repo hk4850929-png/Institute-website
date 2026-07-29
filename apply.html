@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Now - EduTech Institute</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-graduation-cap logo-icon"></i>
+            <div class="logo-text">
+                <h2>EduTech Institute</h2>
+                <p>Excellence in Education</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- The Apply Now button acts as the active indicator here -->
+        <a href="apply.html" class="btn" style="background-color: var(--primary-blue);">Apply Now</a>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main style="padding: 4rem 5%; background-color: var(--bg-light); min-height: 60vh; display: flex; justify-content: center; align-items: center;">
+        
+        <div style="background: var(--bg-white); padding: 3rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); width: 100%; max-width: 600px;">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h1 style="color: var(--primary-blue); font-size: 2rem; margin-bottom: 0.5rem;">Student Application</h1>
+                <p>Take the first step towards your future. Fill out the form below to apply for admission.</p>
+            </div>
+
+            <form action="#" method="POST" style="display: flex; flex-direction: column; gap: 1.2rem;">
+                <!-- Personal Details -->
+                <div style="display: flex; gap: 1rem;">
+                    <input type="text" placeholder="First Name" required style="flex: 1; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-family: var(--font-main);">
+                    <input type="text" placeholder="Last Name" required style="flex: 1; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-family: var(--font-main);">
+                </div>
+                
+                <input type="email" placeholder="Email Address" required style="padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-family: var(--font-main);">
+                <input type="tel" placeholder="Phone Number" required style="padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-family: var(--font-main);">
+                
+                <!-- Course Selection -->
+                <select required style="padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-family: var(--font-main); color: var(--text-gray); background-color: white;">
+                    <option value="" disabled selected>Select a Program of Interest</option>
+                    <option value="frontend">Frontend Development</option>
+                    <option value="backend">Backend Engineering</option>
+                    <option value="uiux">UI/UX Design</option>
+                </select>
+
+                <textarea placeholder="Tell us briefly why you want to join this program..." rows="4" style="padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-family: var(--font-main); resize: vertical;"></textarea>
+                
+                <button type="submit" class="btn" style="border: none; cursor: pointer; padding: 14px; font-size: 1rem; margin-top: 10px;">Submit Application</button>
+            </form>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 EduTech Institute. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
