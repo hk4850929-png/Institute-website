@@ -3,399 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic Programs - Global Excellence Institute</title>
-    <style>
-        /* ==========================================================================
-           GLOBAL VARIABLES & BASE STYLES
-           ========================================================================== */
-        :root { 
-            --primary-blue: #003366; 
-            --accent-gold: #fca311; 
-            --text-dark: #333333; 
-            --text-light: #ffffff; 
-            --bg-light: #f8f9fa;
-            --border-color: #e0e0e0;
-            --font-heading: 'Merriweather', Georgia, serif; 
-            --font-body: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif; 
-        }
-
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-        }
-
-        body { 
-            font-family: var(--font-body); 
-            color: var(--text-dark); 
-            background-color: var(--bg-light);
-            line-height: 1.6; 
-            display: flex; 
-            flex-direction: column; 
-            min-height: 100vh;
-            -webkit-text-size-adjust: 100%;
-        }
-
-        h1, h2, h3, h4 { 
-            font-family: var(--font-heading); 
-            color: var(--primary-blue); 
-            margin-bottom: 0.75rem; 
-        }
-
-        .container { 
-            width: 100%; 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            padding: 0 20px; 
-        }
-
-        /* ==========================================================================
-           NAVIGATION
-           ========================================================================== */
-        nav { 
-            position: fixed; 
-            top: 0; 
-            width: 100%; 
-            background-color: var(--primary-blue); 
-            padding: 1rem 0; 
-            z-index: 1000; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15); 
-        }
-
-        .nav-container { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-        }
-
-        .logo { 
-            font-family: var(--font-heading); 
-            font-size: 1.4rem; 
-            color: var(--text-light); 
-            text-decoration: none; 
-            font-weight: bold; 
-        }
-
-        .logo span { color: var(--accent-gold); }
-
-        .nav-links { 
-            display: flex; 
-            list-style: none; 
-            gap: 2rem; 
-            align-items: center; 
-        }
-
-        .nav-links a { 
-            color: var(--text-light); 
-            text-decoration: none; 
-            font-size: 1rem; 
-            font-weight: 600; 
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active { color: var(--accent-gold); }
-
-        .btn-apply-nav { 
-            background-color: var(--accent-gold); 
-            color: var(--primary-blue) !important; 
-            padding: 0.5rem 1.25rem; 
-            border-radius: 4px; 
-            display: inline-block;
-        }
-
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 21px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-            z-index: 1001;
-        }
-
-        .menu-toggle span {
-            width: 100%;
-            height: 3px;
-            background-color: var(--text-light);
-            border-radius: 2px;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .menu-toggle.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
-        .menu-toggle.active span:nth-child(2) { opacity: 0; }
-        .menu-toggle.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
-
-        /* ==========================================================================
-           HEADER / HERO
-           ========================================================================== */
-        .page-header {
-            background: linear-gradient(rgba(0, 51, 102, 0.88), rgba(0, 51, 102, 0.88)), 
-                        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-            color: var(--text-light);
-            padding: 140px 0 60px;
-            text-align: center;
-        }
-
-        .page-header h1 {
-            color: var(--text-light);
-            font-size: 2.8rem;
-        }
-
-        .page-header p {
-            font-size: 1.1rem;
-            max-width: 650px;
-            margin: 0.5rem auto 0;
-            opacity: 0.9;
-        }
-
-        /* ==========================================================================
-           COURSES SECTION
-           ========================================================================== */
-        .section {
-            padding: 4rem 0;
-        }
-
-        .course-list {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            max-width: 950px;
-            margin: 0 auto;
-        }
-
-        .course-card {
-            background: var(--text-light);
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-
-        .course-card:hover {
-            transform: translateY(-3px);
-        }
-
-        .course-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .course-body {
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .course-badge {
-            display: inline-block;
-            background-color: rgba(0, 51, 102, 0.1);
-            color: var(--primary-blue);
-            font-size: 0.8rem;
-            font-weight: bold;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            margin-bottom: 0.5rem;
-            align-self: flex-start;
-        }
-
-        .course-meta {
-            display: flex;
-            gap: 1.5rem;
-            font-size: 0.85rem;
-            color: #666;
-            margin: 0.75rem 0 1rem;
-        }
-
-        .btn-apply-course {
-            align-self: flex-start;
-            background-color: var(--accent-gold);
-            color: var(--primary-blue);
-            text-decoration: none;
-            padding: 0.6rem 1.25rem;
-            font-weight: bold;
-            border-radius: 4px;
-            transition: background 0.3s ease;
-        }
-
-        .btn-apply-course:hover {
-            background-color: #e5930e;
-        }
-
-        /* ==========================================================================
-           FOOTER
-           ========================================================================== */
-        footer { 
-            background-color: var(--primary-blue); 
-            color: var(--text-light); 
-            text-align: center; 
-            padding: 2rem 0; 
-            margin-top: auto;
-            font-size: 0.9rem;
-        }
-
-        /* Responsive Breakpoints */
-        @media screen and (max-width: 768px) {
-            .menu-toggle { display: flex; }
-
-            .nav-links { 
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: var(--primary-blue);
-                flex-direction: column;
-                gap: 0;
-                display: none;
-                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-            }
-
-            .nav-links.active { display: flex; }
-
-            .nav-links li { width: 100%; text-align: center; }
-
-            .nav-links a {
-                display: block;
-                padding: 1rem;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            }
-
-            .course-card {
-                grid-template-columns: 1fr;
-            }
-
-            .course-img {
-                height: 200px;
-            }
-
-            .page-header h1 { font-size: 2rem; }
-        }
-    </style>
+    <title> Courses -  EduTech Institute</title>
+    <link rel="stylesheet" href="style.css?v=100">
 </head>
 <body>
 
-    <!-- NAVIGATION -->
-    <nav>
-        <div class="container nav-container">
-            <a href="index.html" class="logo">Global<span>Excellence</span></a>
-            
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+    <header>
+        <nav>
+            <a href="courses.html" class="logo">
+    <!-- Clean Graduation Cap Icon SVG -->
+    <svg class="logo-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+        <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+    </svg>
+    <span>Edu Tech Institute</span>
+</a>
 
-            <ul class="nav-links" id="navLinks">
+            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="courses.html" class="active">Courses</a></li>
-                <li><a href="apply.html" class="btn-apply-nav">Apply Now</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="btn-shine btn-login">Apply Now</a></li>
             </ul>
-        </div>
-    </nav>
-
-    <!-- PAGE HEADER -->
-    <header class="page-header">
-        <div class="container">
-            <h1>Featured Academic Programs</h1>
-            <p>Explore top-tier degree programs engineered to prepare you for global industry demand.</p>
-        </div>
+        </nav>
     </header>
 
-    <!-- COURSES SECTION -->
-    <section class="section">
-        <div class="container">
-            <div class="course-list">
+    <div class="container animate-up">
+        <h1 style="text-align: center; margin-bottom: 3rem;" class="gradient-text">Explore Our Programs</h1>
 
-                <!-- Course 1: MBA -->
-                <div class="course-card">
-                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="MBA Program" class="course-img">
-                    <div class="course-body">
-                        <div>
-                            <span class="course-badge">Postgraduate</span>
-                            <h3>Master of Business Administration (MBA)</h3>
-                            <div class="course-meta">
-                                <span>⏱ 2 Years</span>
-                                <span>📍 Full Time / Hybrid</span>
-                            </div>
-                            <p>Master corporate strategy, global financial markets, human capital leadership, and entrepreneurship through real-world business case studies.</p>
-                        </div>
-                        <br>
-                        <a href="apply.html" class="btn-apply-course">Apply for this Program</a>
-                    </div>
+        <div class="grid-3">
+            <!-- Course 1 -->
+            <div class="glass-card course-card">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" alt="Frontend">
+                <div class="card-body">
+                    <h3>Fullstack Web Development</h3>
+                    <a href="contact.html" class="btn-shine" style="width: 100%; text-align: center;">Apply Now</a>
                 </div>
+            </div>
 
-                <!-- Course 2: CS -->
-                <div class="course-card">
-                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80" alt="B.Sc Computer Science" class="course-img">
-                    <div class="course-body">
-                        <div>
-                            <span class="course-badge">Undergraduate</span>
-                            <h3>B.Sc. Computer Science</h3>
-                            <div class="course-meta">
-                                <span>⏱ 4 Years</span>
-                                <span>📍 Campus / Lab Intensive</span>
-                            </div>
-                            <p>Build software engineering expertise, study algorithms, artificial intelligence, cloud architectures, and modern cybersecurity principles.</p>
-                        </div>
-                        <br>
-                        <a href="apply.html" class="btn-apply-course">Apply for this Program</a>
-                    </div>
+            <!-- Course 2 -->
+            <div class="glass-card course-card">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Data Science">
+                <div class="card-body">
+                    <h3>Data Science & AI</h3>
+                    <a href="contact.html" class="btn-shine" style="width: 100%; text-align: center;">Apply Now</a>
                 </div>
+            </div>
 
-                <!-- Course 3: UI/UX -->
-                <div class="course-card">
-                    <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=600&q=80" alt="UI/UX & Interactive Design" class="course-img">
-                    <div class="course-body">
-                        <div>
-                            <span class="course-badge">Undergraduate / Diploma</span>
-                            <h3>UI/UX & Interactive Design</h3>
-                            <div class="course-meta">
-                                <span>⏱ 3 Years</span>
-                                <span>📍 Studio / Project Based</span>
-                            </div>
-                            <p>Design user-centric digital experiences. Focus on wireframing, interactive prototyping, user research methodologies, and product architecture.</p>
-                        </div>
-                        <br>
-                        <a href="apply.html" class="btn-apply-course">Apply for this Program</a>
-                    </div>
+            <!-- Course 3 -->
+            <div class="glass-card course-card">
+                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80" alt="Design">
+                <div class="card-body">
+                    <h3>UI/UX Product Architecture</h3>
+                    <a href="contact.html" class="btn-shine" style="width: 100%; text-align: center;">Apply Now</a>
                 </div>
-
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- FOOTER -->
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Global Excellence Institute. All rights reserved.</p>
-        </div>
+        <p>&copy; 2026  Edu Tech Institute. All Rights Reserved.</p>
     </footer>
 
-    <!-- INTERACTIVE SCRIPTS -->
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
-    </script>
 </body>
 </html>
