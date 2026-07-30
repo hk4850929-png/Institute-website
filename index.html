@@ -5,37 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GlobalExcellence</title>
   <style>
-    /* ==========================================================================
-       1. GLOBAL RESET & MOBILE RESPONSIVE BASE
-       ========================================================================== */
+    /* Global Reset */
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-    html, body {
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
       width: 100%;
       max-width: 100vw;
-      overflow-x: hidden; /* Fixes horizontal side-scrolling on mobile */
+      overflow-x: hidden;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: #222222;
       line-height: 1.6;
       background-color: #ffffff;
     }
 
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* ==========================================================================
-       2. HEADER / NAVBAR
-       ========================================================================== */
+    /* Header & Navigation */
     header {
       width: 100%;
-      background-color: #002B49; /* Dark Navy */
+      background-color: #002B49;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -49,36 +43,36 @@
       font-size: 1.35rem;
       font-weight: 700;
       color: #ffffff;
-      letter-spacing: -0.5px;
     }
 
     .logo span {
-      color: #D4AF37; /* Gold accent */
+      color: #D4AF37;
     }
 
-    /* Hamburger menu icon */
-    .hamburger-menu {
+    /* Navigation Links */
+    nav ul {
       display: flex;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 4px;
+      list-style: none;
+      gap: 1.5rem;
     }
 
-    .hamburger-menu span {
-      width: 24px;
-      height: 2.5px;
-      background-color: #ffffff;
-      border-radius: 2px;
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
     }
 
-    /* ==========================================================================
-       3. HERO SECTION ("About Our Institute")
-       ========================================================================== */
+    nav a:hover {
+      color: #D4AF37;
+    }
+
+    /* Hero Banner Section */
     .hero {
       position: relative;
       width: 100%;
-      padding: 3.5rem 1.25rem;
+      padding: 4rem 1.25rem;
       background: linear-gradient(rgba(0, 43, 73, 0.88), rgba(0, 43, 73, 0.88)),
                   url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80') center/cover no-repeat;
       color: #ffffff;
@@ -91,96 +85,87 @@
     }
 
     .hero h1 {
-      font-size: 2.1rem;
+      font-size: 2.2rem;
       font-family: Georgia, serif;
-      font-weight: 700;
       margin-bottom: 0.8rem;
     }
 
     .hero p {
       font-size: 1.05rem;
-      font-weight: 300;
       opacity: 0.95;
-      line-height: 1.5;
     }
 
-    /* ==========================================================================
-       4. MAIN CONTENT AREA
-       ========================================================================== */
-    .main-content {
+    /* General Content Sections */
+    section {
       width: 100%;
-      max-width: 750px;
+      max-width: 800px;
       margin: 0 auto;
-      padding: 2.5rem 1.25rem;
+      padding: 3rem 1.25rem;
+      border-bottom: 1px solid #eeeeee;
     }
 
-    .main-content h2 {
+    section h2 {
       font-size: 1.8rem;
       color: #002B49;
       font-family: Georgia, serif;
-      font-weight: 700;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
     }
 
-    .main-content p {
-      font-size: 1.05rem;
+    section p {
+      font-size: 1rem;
       color: #4a4a4a;
-      margin-bottom: 1.25rem;
-      line-height: 1.65;
+      margin-bottom: 1rem;
     }
 
-    /* ==========================================================================
-       5. MEDIA QUERIES (Desktop Adjustments)
-       ========================================================================== */
-    @media (min-width: 768px) {
-      header {
-        padding: 1.2rem 3rem;
-      }
+    /* Footer */
+    footer {
+      background-color: #001a2d;
+      color: #ffffff;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.85rem;
+    }
 
-      .hero {
-        padding: 5rem 2rem;
+    /* Mobile Responsive Styles */
+    @media (max-width: 600px) {
+      nav ul {
+        gap: 0.8rem;
+      }
+      
+      nav a {
+        font-size: 0.85rem;
       }
 
       .hero h1 {
-        font-size: 3rem;
-      }
-
-      .hero p {
-        font-size: 1.25rem;
-      }
-
-      .main-content {
-        padding: 4rem 2rem;
-      }
-
-      .main-content h2 {
-        font-size: 2.3rem;
+        font-size: 1.8rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation Header -->
+  <!-- Top Navigation Header -->
   <header>
     <div class="logo">Global<span>Excellence</span></div>
-    <div class="hamburger-menu" aria-label="Toggle navigation">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Hero / Banner Section -->
-  <section class="hero">
+  <!-- Hero Section -->
+  <div class="hero">
     <div class="hero-content">
       <h1>About Our Institute</h1>
       <p>Fostering academic innovation, leadership, and global impact since 1998.</p>
     </div>
-  </section>
+  </div>
 
-  <!-- Article / Content Section -->
-  <main class="main-content">
+  <!-- About Section -->
+  <section id="about">
     <h2>Educating Tomorrow's Visionaries</h2>
     <p>
       At Global Excellence Institute, we combine foundational academic principles with forward-looking industry practices. Our programs empower students to critical thinking, creative problem-solving, and decisive leadership.
@@ -188,7 +173,28 @@
     <p>
       Located in an innovative academic ecosystem, we offer state-of-the-art facilities, world-renowned faculty, and strong global employer connections.
     </p>
-  </main>
+  </section>
+
+  <!-- Additional Section: Programs -->
+  <section id="programs">
+    <h2>Our Academic Programs</h2>
+    <p>
+      We offer undergraduate, graduate, and executive programs designed to meet current market requirements and future industry standards.
+    </p>
+  </section>
+
+  <!-- Additional Section: Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>
+      Have questions or want to learn more? Reach out to our admissions team today.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 1998–2026 Global Excellence Institute. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
