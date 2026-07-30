@@ -3,58 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - EduTech Institute</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>About - Global Excellence Institute</title>
+    <!-- Use the exact same <style> block from index.html here -->
+    <style>
+        :root { --primary-blue: #003366; --accent-gold: #fca311; --text-dark: #333333; --text-light: #ffffff; --font-heading: 'Merriweather', Georgia, serif; --font-body: 'Open Sans', -apple-system, sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); color: var(--text-dark); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh;}
+        h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--primary-blue); margin-bottom: 1rem; }
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        nav { position: fixed; top: 0; width: 100%; background-color: var(--primary-blue); padding: 1rem 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: var(--font-heading); font-size: 1.5rem; color: var(--text-light); text-decoration: none; font-weight: bold; }
+        .logo span { color: var(--accent-gold); }
+        .nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
+        .nav-links a { color: var(--text-light); text-decoration: none; font-size: 1rem; font-weight: 600; }
+        .nav-links a:hover { color: var(--accent-gold); }
+        .btn-apply-nav { background-color: var(--accent-gold); color: var(--primary-blue) !important; padding: 0.5rem 1.5rem; border-radius: 4px; }
+        footer { background-color: var(--primary-blue); color: var(--text-light); text-align: center; padding: 3rem 0; margin-top: auto;}
+        
+        /* PAGE SPECIFIC CSS */
+        .page-section { padding: 120px 0 5rem; } /* Extra top padding for fixed nav */
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--accent-gold); margin: 15px auto 0; }
+        .about-content { display: flex; gap: 4rem; align-items: center; }
+        .about-text { flex: 1; }
+        .about-text p { margin-bottom: 1.5rem; font-size: 1.1rem; color: #555; }
+        .about-stats { flex: 1; display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+        .stat-box { background: var(--primary-blue); color: var(--text-light); padding: 2rem; text-align: center; border-radius: 8px; }
+        .stat-box h4 { color: var(--accent-gold); font-size: 2.5rem; margin-bottom: 0.5rem; }
+        
+        .fade-in { opacity: 0; transform: translateY(20px); animation: fadeIn 0.8s ease-out forwards; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+        @media screen and (max-width: 768px) { .nav-links { display: none; } .about-content { flex-direction: column; } }
+    </style>
 </head>
 <body>
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Global<span>Excellence</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="apply.html" class="btn-apply-nav">Apply Now</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <!-- Header & Navigation -->
-    <header>
-        <div class="logo">
-            <i class="fa-solid fa-graduation-cap logo-icon"></i>
-            <div>
-                <strong>EduTech Institute</strong>
-                <span>Excellence in Education</span>
+    <section class="page-section">
+        <div class="container fade-in">
+            <h2 class="section-title">About Our Institute</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Established in 1995, Global Excellence Institute has been at the forefront of modern education. We believe in bridging the gap between theoretical knowledge and practical industry application.</p>
+                    <p>Our campus features state-of-the-art facilities, a faculty of renowned industry experts, and a global alumni network that provides our students with unparalleled opportunities.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-box">
+                        <h4>25+</h4>
+                        <p>Years of Excellence</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4>98%</h4>
+                        <p>Placement Rate</p>
+                    </div>
+                </div>
             </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About</a></li>
-                <li><a href="courses.html">Courses</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <a href="#apply" class="btn btn-primary">Apply Now</a>
-    </header>
-
-    <!-- Page Content -->
-    <section class="hero" style="background-color: var(--bg-light); text-align: center; justify-content: center; padding: 40px 5%;">
-        <div class="hero-content" style="max-width: 800px;">
-            <h1>About EduTech Institute</h1>
-            <p class="description">Founded with a vision to bridge the gap between academic learning and industry requirements, we are dedicated to shaping the tech leaders of tomorrow.</p>
-        </div>
     </section>
 
-    <section style="padding: 60px 5%; max-width: 1000px; margin: 0 auto;">
-        <h2>Our Mission</h2>
-        <p style="margin-bottom: 20px; color: var(--text-light);">To provide accessible, high-quality technical education that empowers students to achieve their career aspirations in a rapidly evolving digital world.</p>
-        
-        <h2>Why Choose Us?</h2>
-        <ul style="list-style-position: inside; color: var(--text-light); margin-top: 10px;">
-            <li>State-of-the-art infrastructure and labs</li>
-            <li>Curriculum designed by industry experts</li>
-            <li>100% placement assistance and internship opportunities</li>
-            <li>Focus on practical, hands-on learning</li>
-        </ul>
-    </section>
-
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 EduTech Institute. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2026 Global Excellence Institute. All rights reserved.</p>
+        </div>
     </footer>
-
 </body>
 </html>
