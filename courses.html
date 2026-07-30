@@ -3,63 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses - EduTech Institute</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Courses - Global Excellence Institute</title>
+    <style>
+        :root { --primary-blue: #003366; --accent-gold: #fca311; --text-dark: #333333; --text-light: #ffffff; --bg-light: #f8f9fa; --font-heading: 'Merriweather', Georgia, serif; --font-body: 'Open Sans', -apple-system, sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); color: var(--text-dark); background-color: var(--bg-light); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh;}
+        h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--primary-blue); margin-bottom: 1rem; }
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        nav { position: fixed; top: 0; width: 100%; background-color: var(--primary-blue); padding: 1rem 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: var(--font-heading); font-size: 1.5rem; color: var(--text-light); text-decoration: none; font-weight: bold; }
+        .logo span { color: var(--accent-gold); }
+        .nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
+        .nav-links a { color: var(--text-light); text-decoration: none; font-size: 1rem; font-weight: 600; }
+        .nav-links a:hover { color: var(--accent-gold); }
+        .btn-apply-nav { background-color: var(--accent-gold); color: var(--primary-blue) !important; padding: 0.5rem 1.5rem; border-radius: 4px; }
+        footer { background-color: var(--primary-blue); color: var(--text-light); text-align: center; padding: 3rem 0; margin-top: auto;}
+
+        /* PAGE SPECIFIC CSS */
+        .page-section { padding: 120px 0 5rem; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--accent-gold); margin: 15px auto 0; }
+        .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
+        .course-card { background: var(--text-light); border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: transform 0.3s ease; }
+        .course-card:hover { transform: translateY(-8px); }
+        .course-img { width: 100%; height: 200px; object-fit: cover; }
+        .course-content { padding: 1.5rem; }
+        .course-tag { display: inline-block; background-color: var(--accent-gold); color: var(--primary-blue); font-size: 0.8rem; font-weight: bold; padding: 0.3rem 0.8rem; border-radius: 20px; margin-bottom: 1rem; }
+        .course-details { display: flex; justify-content: space-between; color: #666; font-size: 0.9rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #eee; }
+
+        .fade-in { opacity: 0; transform: translateY(20px); animation: fadeIn 0.8s ease-out forwards; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+        @media screen and (max-width: 768px) { .nav-links { display: none; } }
+    </style>
 </head>
 <body>
-
-    <header>
-        <div class="logo">
-            <i class="fa-solid fa-graduation-cap logo-icon"></i>
-            <div>
-                <strong>EduTech Institute</strong>
-                <span>Excellence in Education</span>
-            </div>
-        </div>
-        <nav>
-            <ul>
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Global<span>Excellence</span></a>
+            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="courses.html" class="active">Courses</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="apply.html" class="btn-apply-nav">Apply Now</a></li>
             </ul>
-        </nav>
-        <a href="#apply" class="btn btn-primary">Apply Now</a>
-    </header>
-
-    <section class="hero" style="background-color: var(--bg-light); text-align: center; justify-content: center; padding: 40px 5%;">
-        <div class="hero-content">
-            <h1>Our Programs</h1>
-            <p class="description">Explore our industry-aligned programs designed to launch your career.</p>
         </div>
-    </section>
+    </nav>
 
-    <section class="features" style="flex-wrap: wrap;">
-        <div class="feature-card" style="flex: 1 1 300px;">
-            <h3>Frontend Development</h3>
-            <p style="margin-bottom: 15px;">Master HTML, CSS, JavaScript, and React to build stunning user interfaces.</p>
-            <a href="#" class="btn btn-primary" style="padding: 5px 15px; font-size: 0.9rem;">View Details</a>
-        </div>
-        
-        <div class="feature-card" style="flex: 1 1 300px;">
-            <h3>Backend Development</h3>
-            <p style="margin-bottom: 15px;">Learn Node.js, Python, and Databases to build robust server-side applications.</p>
-            <a href="#" class="btn btn-primary" style="padding: 5px 15px; font-size: 0.9rem;">View Details</a>
-        </div>
-
-        <div class="feature-card" style="flex: 1 1 300px;">
-            <h3>UI/UX Design</h3>
-            <p style="margin-bottom: 15px;">Discover the principles of design, wireframing, and prototyping with Figma.</p>
-            <a href="#" class="btn btn-primary" style="padding: 5px 15px; font-size: 0.9rem;">View Details</a>
+    <section class="page-section">
+        <div class="container fade-in">
+            <h2 class="section-title">Popular Courses</h2>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80" alt="Business" class="course-img">
+                    <div class="course-content">
+                        <span class="course-tag">Business</span>
+                        <h3>Master of Business Administration</h3>
+                        <p>Develop leadership skills and strategic thinking with our comprehensive management curriculum.</p>
+                        <div class="course-details"><span>⏱ 2 Years</span><span>🎓 Postgraduate</span></div>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80" alt="Tech" class="course-img">
+                    <div class="course-content">
+                        <span class="course-tag">Technology</span>
+                        <h3>B.Sc. Computer Science</h3>
+                        <p>Learn cutting-edge software engineering, data science, and artificial intelligence from experts.</p>
+                        <div class="course-details"><span>⏱ 4 Years</span><span>🎓 Undergraduate</span></div>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80" alt="Design" class="course-img">
+                    <div class="course-content">
+                        <span class="course-tag">Creative</span>
+                        <h3>UI/UX & Interactive Design</h3>
+                        <p>Master graphic design and user experience in our hands-on, portfolio-driven creative labs.</p>
+                        <div class="course-details"><span>⏱ 3 Years</span><span>🎓 Undergraduate</span></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 EduTech Institute. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2026 Global Excellence Institute. All rights reserved.</p>
+        </div>
     </footer>
-
 </body>
 </html>
-
