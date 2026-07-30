@@ -3,80 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduTech Institute - Building Knowledge, Shaping Futures</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Home - Global Excellence Institute</title>
+    <style>
+        /* GLOBAL VARIABLES & BASE */
+        :root {
+            --primary-blue: #003366;
+            --accent-gold: #fca311;
+            --text-dark: #333333;
+            --text-light: #ffffff;
+            --bg-light: #f8f9fa;
+            --font-heading: 'Merriweather', Georgia, serif;
+            --font-body: 'Open Sans', -apple-system, sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); color: var(--text-dark); line-height: 1.6; background-color: var(--text-light); overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--primary-blue); margin-bottom: 1rem; }
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* NAVIGATION */
+        nav { position: fixed; top: 0; width: 100%; background-color: var(--primary-blue); padding: 1rem 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: var(--font-heading); font-size: 1.5rem; color: var(--text-light); text-decoration: none; font-weight: bold; }
+        .logo span { color: var(--accent-gold); }
+        .nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
+        .nav-links a { color: var(--text-light); text-decoration: none; font-size: 1rem; font-weight: 600; transition: color 0.3s ease; }
+        .nav-links a:hover { color: var(--accent-gold); }
+        .btn-apply-nav { background-color: var(--accent-gold); color: var(--primary-blue) !important; padding: 0.5rem 1.5rem; border-radius: 4px; transition: all 0.3s ease; }
+        .btn-apply-nav:hover { background-color: #ffffff; }
+        
+        /* HERO (HOME PAGE) */
+        .hero { height: 100vh; background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover; display: flex; align-items: center; text-align: center; color: var(--text-light); padding-top: 70px; }
+        .hero h1 { color: var(--text-light); font-size: clamp(2.5rem, 5vw, 4.5rem); margin-bottom: 1.5rem; }
+        .hero p { font-size: 1.25rem; max-width: 700px; margin: 0 auto 2.5rem; }
+        
+        /* BUTTONS */
+        .btn-primary { display: inline-block; background-color: var(--accent-gold); color: var(--primary-blue); padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: bold; text-decoration: none; border-radius: 4px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        
+        /* FOOTER */
+        footer { background-color: var(--primary-blue); color: var(--text-light); text-align: center; padding: 3rem 0; margin-top: auto;}
+        
+        /* ANIMATION */
+        .fade-in { opacity: 0; transform: translateY(20px); animation: fadeIn 0.8s ease-out forwards; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+
+        /* RESPONSIVE */
+        @media screen and (max-width: 768px) { .nav-links { display: none; } }
+    </style>
 </head>
 <body>
-
-    <!-- Header & Navigation -->
-    <header>
-        <div class="logo">
-            <i class="fa-solid fa-graduation-cap logo-icon"></i>
-            <div>
-                <strong>EduTech Institute</strong>
-                <span>Excellence in Education</span>
-            </div>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Global<span>Excellence</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="courses.html">Courses</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="apply.html" class="btn-apply-nav">Apply Now</a></li>
             </ul>
-        </nav>
-        <a href="#apply" class="btn btn-primary">Apply Now</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container fade-in">
+            <h1>Empowering Future Leaders</h1>
+            <p>A premier institution dedicated to academic excellence, innovative research, and shaping the minds that will change the world.</p>
+            <a href="apply.html" class="btn-primary">Start Your Application</a>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <p class="subtitle">WELCOME TO EDUTECH INSTITUTE</p>
-            <h1>Building Knowledge,<br>Shaping Futures</h1>
-            <p class="description">We provide quality education and practical knowledge to help students achieve their goals.</p>
-            <a href="courses.html" class="btn btn-primary">Explore Courses</a>
-        </div>
-        <div class="hero-image">
-            <!-- Placeholder image representing the institute building -->
-            <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="EduTech Institute Building">
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features">
-        <div class="feature-card">
-            <div class="icon-container">
-                <i class="fa-solid fa-graduation-cap icon"></i>
-            </div>
-            <h3>Expert Faculty</h3>
-            <p>Learn from experienced and qualified faculty.</p>
-        </div>
-
-        <div class="feature-card">
-            <div class="icon-container">
-                <i class="fa-solid fa-book-open icon"></i>
-            </div>
-            <h3>Quality Education</h3>
-            <p>Industry-relevant courses with practical learning.</p>
-        </div>
-
-        <div class="feature-card">
-            <div class="icon-container">
-                <i class="fa-solid fa-user-group icon"></i>
-            </div>
-            <h3>Bright Future</h3>
-            <p>Preparing students for successful careers.</p>
-        </div>
-    </section>
-
-    <!-- Basic Footer Structure -->
     <footer>
-        <p>&copy; 2026 EduTech Institute. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2026 Global Excellence Institute. All rights reserved.</p>
+        </div>
     </footer>
-
 </body>
 </html>
