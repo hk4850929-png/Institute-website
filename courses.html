@@ -3,39 +3,294 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Courses -  EduTech Institute</title>
-    <link rel="stylesheet" href="style.css?v=100">
+    <title>Courses - Global Excellence Institute</title>
+    <style>
+        /* ==========================================
+           LIGHT MODE DESIGN SYSTEM & VARIABLES
+           ========================================== */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+        :root {
+            --primary-gradient: linear-gradient(135deg, #1a237e 0%, #4a148c 50%, #7b1fa2 100%);
+            --bg-gradient: linear-gradient(135deg, #f0f4ff 0%, #e8eaf6 50%, #f3e5f5 100%);
+            --glass-bg: rgba(255, 255, 255, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.9);
+            --glass-shadow: 0 10px 30px 0 rgba(31, 38, 135, 0.08);
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --accent-purple: #6b21a8;
+            --accent-blue: #1d4ed8;
+            --radius-lg: 16px;
+            --radius-md: 12px;
+            --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Ambient Background Blobs */
+        .shape-blob {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* GLASSMORPHISM LIGHT CARDS */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--glass-shadow);
+            transition: var(--transition-smooth);
+            overflow: hidden;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(123, 31, 162, 0.12);
+            border-color: rgba(123, 31, 162, 0.3);
+        }
+
+        /* STICKY LIGHT NAVBAR */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+
+        nav {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1a237e;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            stroke: #1a237e;
+            transition: var(--transition-smooth);
+        }
+
+        .logo:hover .logo-icon {
+            transform: rotate(-8deg) scale(1.08);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            position: relative;
+            padding: 4px 0;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-links a:not(.btn-shine)::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background: var(--primary-gradient);
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:not(.btn-shine):hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: #1a237e;
+            font-weight: 600;
+        }
+
+        /* BUTTONS */
+        .btn-shine {
+            position: relative;
+            padding: 0.75rem 1.6rem;
+            border-radius: 30px;
+            background: var(--primary-gradient);
+            color: #ffffff !important;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            overflow: hidden;
+            cursor: pointer;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(26, 35, 126, 0.25);
+            transition: var(--transition-smooth);
+        }
+
+        .btn-shine:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(123, 31, 162, 0.35);
+        }
+
+        .gradient-text {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* CONTAINER & GRID LAYOUT */
+        .container {
+            max-width: 1280px;
+            margin: 3rem auto 5rem auto;
+            padding: 0 2rem;
+            width: 100%;
+        }
+
+        .grid-3 {
+            display: flex !important;
+            flex-direction: row !important;
+            justify-content: space-between !important;
+            gap: 2rem !important;
+            width: 100%;
+        }
+
+        .grid-3 > div {
+            flex: 1;
+            min-width: 0;
+        }
+
+        /* COURSE CARDS */
+        .course-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-body {
+            padding: 1.8rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .course-card h3 {
+            font-size: 1.25rem;
+            color: #0f172a;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        /* KEYFRAME ANIMATIONS */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-up {
+            animation: fadeInUp 0.7s ease forwards;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #ffffff;
+            border-top: 1px solid #e2e8f0;
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+
+        /* RESPONSIVE MEDIA QUERIES */
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 1rem; }
+            .nav-links { gap: 1rem; flex-wrap: wrap; justify-content: center; }
+            .grid-3 { flex-direction: column !important; }
+        }
+    </style>
 </head>
 <body>
 
+    <!-- Ambient Blobs -->
+    <div class="shape-blob" style="top: 10%; left: 5%; background: #1a237e;"></div>
+    <div class="shape-blob" style="top: 60%; right: 5%; background: #7b1fa2;"></div>
+
+    <!-- Navigation Header -->
     <header>
         <nav>
-            <a href="courses.html" class="logo">
-    <!-- Clean Graduation Cap Icon SVG -->
-    <svg class="logo-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-        <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-    </svg>
-    <span>Edu Tech Institute</span>
-</a>
-
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
+                <span>Global Excellence</span>
+            </a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="courses.html" class="active">Courses</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="contact.html" class="btn-shine btn-login">Apply Now</a></li>
+                <li><a href="contact.html" class="btn-shine">Apply Now</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Main Content -->
     <div class="container animate-up">
-        <h1 style="text-align: center; margin-bottom: 3rem;" class="gradient-text">Explore Our Programs</h1>
+        <h1 style="text-align: center; margin-bottom: 0.5rem;" class="gradient-text">Explore Our Programs</h1>
+        <p style="text-align: center; color: var(--text-muted); max-width: 600px; margin: 0 auto 3rem auto;">
+            Build industry-ready skills with our immersive curriculum designed by field experts.
+        </p>
 
         <div class="grid-3">
             <!-- Course 1 -->
             <div class="glass-card course-card">
-                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" alt="Frontend">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" alt="Fullstack Web Development">
                 <div class="card-body">
                     <h3>Fullstack Web Development</h3>
                     <a href="contact.html" class="btn-shine" style="width: 100%; text-align: center;">Apply Now</a>
@@ -44,7 +299,7 @@
 
             <!-- Course 2 -->
             <div class="glass-card course-card">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Data Science">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Data Science & AI">
                 <div class="card-body">
                     <h3>Data Science & AI</h3>
                     <a href="contact.html" class="btn-shine" style="width: 100%; text-align: center;">Apply Now</a>
@@ -53,7 +308,7 @@
 
             <!-- Course 3 -->
             <div class="glass-card course-card">
-                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80" alt="Design">
+                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80" alt="UI/UX Product Architecture">
                 <div class="card-body">
                     <h3>UI/UX Product Architecture</h3>
                     <a href="contact.html" class="btn-shine" style="width: 100%; text-align: center;">Apply Now</a>
@@ -62,8 +317,9 @@
         </div>
     </div>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026  Edu Tech Institute. All Rights Reserved.</p>
+        <p>&copy; 1998–2026 Global Excellence Institute. All Rights Reserved.</p>
     </footer>
 
 </body>
