@@ -3,79 +3,454 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Global Excellence Institute</title>
-    <!-- Use the exact same <style> block from index.html here -->
+    <title>About Us - Global Excellence Institute</title>
     <style>
-        :root { --primary-blue: #003366; --accent-gold: #fca311; --text-dark: #333333; --text-light: #ffffff; --font-heading: 'Merriweather', Georgia, serif; --font-body: 'Open Sans', -apple-system, sans-serif; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: var(--font-body); color: var(--text-dark); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh;}
-        h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--primary-blue); margin-bottom: 1rem; }
-        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        nav { position: fixed; top: 0; width: 100%; background-color: var(--primary-blue); padding: 1rem 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .nav-container { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: var(--font-heading); font-size: 1.5rem; color: var(--text-light); text-decoration: none; font-weight: bold; }
+        /* ==========================================================================
+           GLOBAL VARIABLES & BASE STYLES
+           ========================================================================== */
+        :root { 
+            --primary-blue: #003366; 
+            --accent-gold: #fca311; 
+            --text-dark: #333333; 
+            --text-light: #ffffff; 
+            --bg-light: #f8f9fa;
+            --border-color: #e0e0e0;
+            --font-heading: 'Merriweather', Georgia, serif; 
+            --font-body: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif; 
+        }
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+
+        body { 
+            font-family: var(--font-body); 
+            color: var(--text-dark); 
+            background-color: var(--bg-light);
+            line-height: 1.6; 
+            display: flex; 
+            flex-direction: column; 
+            min-height: 100vh;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        h1, h2, h3, h4 { 
+            font-family: var(--font-heading); 
+            color: var(--primary-blue); 
+            margin-bottom: 0.75rem; 
+        }
+
+        .container { 
+            width: 100%; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+
+        /* ==========================================================================
+           NAVIGATION
+           ========================================================================== */
+        nav { 
+            position: fixed; 
+            top: 0; 
+            width: 100%; 
+            background-color: var(--primary-blue); 
+            padding: 1rem 0; 
+            z-index: 1000; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15); 
+        }
+
+        .nav-container { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+
+        .logo { 
+            font-family: var(--font-heading); 
+            font-size: 1.4rem; 
+            color: var(--text-light); 
+            text-decoration: none; 
+            font-weight: bold; 
+        }
+
         .logo span { color: var(--accent-gold); }
-        .nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
-        .nav-links a { color: var(--text-light); text-decoration: none; font-size: 1rem; font-weight: 600; }
-        .nav-links a:hover { color: var(--accent-gold); }
-        .btn-apply-nav { background-color: var(--accent-gold); color: var(--primary-blue) !important; padding: 0.5rem 1.5rem; border-radius: 4px; }
-        footer { background-color: var(--primary-blue); color: var(--text-light); text-align: center; padding: 3rem 0; margin-top: auto;}
-        
-        /* PAGE SPECIFIC CSS */
-        .page-section { padding: 120px 0 5rem; } /* Extra top padding for fixed nav */
-        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; }
-        .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--accent-gold); margin: 15px auto 0; }
-        .about-content { display: flex; gap: 4rem; align-items: center; }
-        .about-text { flex: 1; }
-        .about-text p { margin-bottom: 1.5rem; font-size: 1.1rem; color: #555; }
-        .about-stats { flex: 1; display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
-        .stat-box { background: var(--primary-blue); color: var(--text-light); padding: 2rem; text-align: center; border-radius: 8px; }
-        .stat-box h4 { color: var(--accent-gold); font-size: 2.5rem; margin-bottom: 0.5rem; }
-        
-        .fade-in { opacity: 0; transform: translateY(20px); animation: fadeIn 0.8s ease-out forwards; }
-        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
-        @media screen and (max-width: 768px) { .nav-links { display: none; } .about-content { flex-direction: column; } }
+
+        .nav-links { 
+            display: flex; 
+            list-style: none; 
+            gap: 2rem; 
+            align-items: center; 
+        }
+
+        .nav-links a { 
+            color: var(--text-light); 
+            text-decoration: none; 
+            font-size: 1rem; 
+            font-weight: 600; 
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active { color: var(--accent-gold); }
+
+        .btn-apply-nav { 
+            background-color: var(--accent-gold); 
+            color: var(--primary-blue) !important; 
+            padding: 0.5rem 1.25rem; 
+            border-radius: 4px; 
+            display: inline-block;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            width: 100%;
+            height: 3px;
+            background-color: var(--text-light);
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .menu-toggle.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+        .menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .menu-toggle.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+        /* ==========================================================================
+           HEADER / HERO
+           ========================================================================== */
+        .page-header {
+            background: linear-gradient(rgba(0, 51, 102, 0.88), rgba(0, 51, 102, 0.88)), 
+                        url('https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            color: var(--text-light);
+            padding: 140px 0 60px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            color: var(--text-light);
+            font-size: 2.8rem;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0.5rem auto 0;
+            opacity: 0.9;
+        }
+
+        /* ==========================================================================
+           ABOUT CONTENT & MISSION
+           ========================================================================== */
+        .section {
+            padding: 4rem 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .stat-card {
+            background: var(--text-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-bottom: 4px solid var(--accent-gold);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.25rem;
+        }
+
+        /* Mission Vision Cards */
+        .mission-section {
+            background-color: var(--text-light);
+            padding: 4rem 0;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border-left: 5px solid var(--primary-blue);
+        }
+
+        .info-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Leadership Section */
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .faculty-card {
+            background: var(--text-light);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .faculty-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .faculty-info {
+            padding: 1.5rem;
+        }
+
+        .faculty-info h4 {
+            margin-bottom: 0.25rem;
+            font-size: 1.15rem;
+        }
+
+        .faculty-info span {
+            color: var(--accent-gold);
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .faculty-info p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* ==========================================================================
+           FOOTER
+           ========================================================================== */
+        footer { 
+            background-color: var(--primary-blue); 
+            color: var(--text-light); 
+            text-align: center; 
+            padding: 2rem 0; 
+            margin-top: auto;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Breakpoints */
+        @media screen and (max-width: 768px) {
+            .menu-toggle { display: flex; }
+
+            .nav-links { 
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-blue);
+                flex-direction: column;
+                gap: 0;
+                display: none;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-links.active { display: flex; }
+
+            .nav-links li { width: 100%; text-align: center; }
+
+            .nav-links a {
+                display: block;
+                padding: 1rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            .about-grid, .card-grid, .faculty-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .page-header h1 { font-size: 2rem; }
+        }
     </style>
 </head>
 <body>
+
+    <!-- NAVIGATION -->
     <nav>
         <div class="container nav-container">
             <a href="index.html" class="logo">Global<span>Excellence</span></a>
-            <ul class="nav-links">
+            
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="about.html" class="active">About</a></li>
                 <li><a href="courses.html">Courses</a></li>
                 <li><a href="apply.html" class="btn-apply-nav">Apply Now</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="page-section">
-        <div class="container fade-in">
-            <h2 class="section-title">About Our Institute</h2>
-            <div class="about-content">
+    <!-- PAGE HEADER -->
+    <header class="page-header">
+        <div class="container">
+            <h1>About Our Institute</h1>
+            <p>Fostering academic innovation, leadership, and global impact since 1998.</p>
+        </div>
+    </header>
+
+    <!-- ABOUT SECTION -->
+    <section class="section">
+        <div class="container">
+            <div class="about-grid">
                 <div class="about-text">
-                    <p>Established in 1995, Global Excellence Institute has been at the forefront of modern education. We believe in bridging the gap between theoretical knowledge and practical industry application.</p>
-                    <p>Our campus features state-of-the-art facilities, a faculty of renowned industry experts, and a global alumni network that provides our students with unparalleled opportunities.</p>
+                    <h2>Educating Tomorrow's Visionaries</h2>
+                    <p>At Global Excellence Institute, we combine foundational academic principles with forward-looking industry practices. Our programs empower students to critical thinking, creative problem-solving, and decisive leadership.</p>
+                    <p>Located in an innovative academic ecosystem, we offer state-of-the-art facilities, world-renowned faculty, and strong global employer connections.</p>
                 </div>
-                <div class="about-stats">
-                    <div class="stat-box">
-                        <h4>25+</h4>
-                        <p>Years of Excellence</p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label">Years of Excellence</div>
                     </div>
-                    <div class="stat-box">
-                        <h4>98%</h4>
-                        <p>Placement Rate</p>
+                    <div class="stat-card">
+                        <div class="stat-number">15k+</div>
+                        <div class="stat-label">Global Alumni</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">96%</div>
+                        <div class="stat-label">Employment Rate</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- MISSION & VISION -->
+    <section class="section mission-section">
+        <div class="container">
+            <div class="card-grid">
+                <div class="info-card">
+                    <h3>Our Mission</h3>
+                    <p>To deliver world-class education that equips students with professional mastery, ethical responsibility, and global perspective to succeed in an ever-evolving world.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Our Vision</h3>
+                    <p>To be recognized internationally as a hub of academic quality, groundbreaking research, and inclusive leadership development across all disciplines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEADERSHIP FACULTY -->
+    <section class="section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.2rem;">Academic Leadership</h2>
+            <div class="faculty-grid">
+                <div class="faculty-card">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Dr. Sarah Jenkins" class="faculty-img">
+                    <div class="faculty-info">
+                        <h4>Dr. Sarah Jenkins</h4>
+                        <span>Dean of Academics</span>
+                        <p>Ph.D. in Education Management with 20+ years driving higher education standards.</p>
+                    </div>
+                </div>
+
+                <div class="faculty-card">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="Prof. Marcus Vance" class="faculty-img">
+                    <div class="faculty-info">
+                        <h4>Prof. Marcus Vance</h4>
+                        <span>Head of Computer Science</span>
+                        <p>Pioneer in AI and Software Engineering with extensive Silicon Valley advisory roles.</p>
+                    </div>
+                </div>
+
+                <div class="faculty-card">
+                    <img src="https://images.unsplash.com/photo-1580894732413-a70d2a9323eb?auto=format&fit=crop&w=600&q=80" alt="Elena Rostova" class="faculty-img">
+                    <div class="faculty-info">
+                        <h4>Elena Rostova</h4>
+                        <span>Director of Business Studies</span>
+                        <p>Former executive advisor specializing in corporate strategy and global finance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
         <div class="container">
             <p>&copy; 2026 Global Excellence Institute. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- INTERACTIVE SCRIPTS -->
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
