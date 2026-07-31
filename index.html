@@ -1,69 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edu Tech Institute - Premium Institute</title>
-    <link rel="stylesheet" href="style.css?v=100">
+    <title>Nexus Institute | Learn Today, Lead Tomorrow</title>
+    <meta name="description" content="Empowering students with industry-ready skills for a brighter future.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
 
-    <div class="shape-blob" style="top: 10%; left: 5%;"></div>
-    <div class="shape-blob" style="top: 60%; right: 5%; background: linear-gradient(135deg, #38bdf8, #a855f7);"></div>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <h2><i class="fa-solid fa-graduation-cap"></i> Nexus</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="faculty.html">Faculty</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button id="theme-toggle" aria-label="Toggle Dark Mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <a href="#" class="btn btn-primary">Apply Now</a>
+            <button class="hamburger"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </nav>
 
-    <header>
-        <nav>
-            <a href="index.html" class="logo">
-    <!-- Clean Graduation Cap Icon SVG -->
-    <svg class="logo-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-        <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-    </svg>
-    <span>Edu Tech Institute</span>
-</a>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="courses.html">Courses</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="contact.html" class="btn-shine btn-login">Apply Now</a></li>
-            </ul>
-        </nav>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content fade-up">
+            <h1>Learn Today,<br><span>Lead Tomorrow</span></h1>
+            <p class="hero-subtitle">Empowering students with industry-ready skills, modern infrastructure, and expert guidance for a brighter, successful future.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary">Apply Now <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="courses.html" class="btn btn-outline">Discover Courses</a>
+            </div>
+        </div>
+        <div class="hero-image fade-up">
+            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Modern Institute Campus">
+        </div>
     </header>
 
-    <section class="hero animate-up">
-        <div class="hero-text">
-            <h1>Empowering The Next Gen <br><span class="gradient-text">Future Leaders</span></h1>
-            <p style="color: var(--text-muted); margin-bottom: 2rem;">Acquire world-class skills with modern industry-aligned curricula, expert instructors, and hands-on practical project exposure.</p>
-            <a href="courses.html" class="btn-shine">Explore Programs</a>
-        </div>
-        <div class="hero-image glass-card" style="padding: 1rem;"
-            <img src="https://www.cnu.org/sites/default/files/styles/public_square_feature_image/public/BostonCollege1.jpg?itok=iKc35HST" alt="Boston College Campus" />
-
+    <!-- Feature Cards Section -->
+    <section class="features">
+        <h2 class="section-title fade-up">Why Choose Nexus?</h2>
+        <div class="grid-6 fade-up">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                <h3>Expert Faculty</h3>
+                <p>Learn from industry veterans and PhD scholars dedicated to your academic growth.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-book-open-reader"></i></div>
+                <h3>Quality Education</h3>
+                <p>Updated curriculum designed in collaboration with top tech companies.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                <h3>Smart Classrooms</h3>
+                <p>Fully equipped digital classrooms and modern labs for practical learning.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-briefcase"></i></div>
+                <h3>Placement Support</h3>
+                <p>100% placement assistance with dedicated mock interviews and resume building.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-microchip"></i></div>
+                <h3>Industry Training</h3>
+                <p>Regular workshops, hackathons, and seminars by industry leaders.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-earth-americas"></i></div>
+                <h3>Bright Future</h3>
+                <p>Join a global alumni network and step confidently into your career.</p>
+            </div>
         </div>
     </section>
 
-    <main class="container">
-        <h2 style="text-align: center; margin-bottom: 2.5rem;" class="gradient-text">Why Choose  Edu Tech Institute?</h2>
-        <div class="grid-3">
-            <div class="glass-card card-body animate-up">
-                <h3>🚀 Modern Curriculum</h3>
-                <p style="color: var(--text-muted);">Updated quarterly to align with evolving global tech and design standards.</p>
+    <!-- Statistics Section -->
+    <section class="stats fade-up">
+        <div class="stat-item">
+            <h2 class="counter" data-target="5000" data-suffix="+">0</h2>
+            <p>Happy Students</p>
+        </div>
+        <div class="stat-item">
+            <h2 class="counter" data-target="120" data-suffix="+">0</h2>
+            <p>Expert Faculty</p>
+        </div>
+        <div class="stat-item">
+            <h2 class="counter" data-target="50" data-suffix="+">0</h2>
+            <p>Premium Courses</p>
+        </div>
+        <div class="stat-item">
+            <h2 class="counter" data-target="98" data-suffix="%">0</h2>
+            <p>Placement Rate</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="nav-logo" style="margin-bottom: 1rem;">
+                    <h2><i class="fa-solid fa-graduation-cap" style="color: white;"></i> Nexus</h2>
+                </div>
+                <p style="color: #94a3b8;">Empowering the next generation of leaders with world-class education.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
             </div>
-            <div class="glass-card card-body animate-up">
-                <h3>👨‍🏫 Industry Experts</h3>
-                <p style="color: var(--text-muted);">Learn directly from seasoned software engineers, researchers, and UI experts.</p>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html">Our Courses</a></li>
+                    <li><a href="faculty.html">Faculty Directory</a></li>
+                    <li><a href="gallery.html">Campus Gallery</a></li>
+                </ul>
             </div>
-            <div class="glass-card card-body animate-up">
-                <h3>💼 Career Support</h3>
-                <p style="color: var(--text-muted);">100% placement guidance, portfolio reviews, and mock interview preparations.</p>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <ul style="color: #cbd5e1;">
+                    <li><i class="fa-solid fa-location-dot"></i> 123 Education Hub, Tech City</li>
+                    <li><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</li>
+                    <li><i class="fa-solid fa-envelope"></i> info@nexusinstitute.edu</li>
+                </ul>
             </div>
         </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2026  EduTech Institute. All Rights Reserved.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Nexus Institute. All Rights Reserved.</p>
+        </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
 </body>
 </html>
