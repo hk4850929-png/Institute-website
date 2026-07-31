@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Faculty | Nexus Institute</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-header {
+            padding: 10rem 5% 4rem;
+            background: linear-gradient(rgba(15,23,42,0.8), rgba(15,23,42,0.8)), url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: white;
+            text-align: center;
+        }
+        
+        .faculty-section { padding: 5rem 5%; background: var(--bg-color); }
+        
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .faculty-card {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .faculty-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .faculty-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .faculty-card:hover .faculty-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .faculty-social {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            background: rgba(37, 99, 235, 0.9);
+            padding: 1rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            transition: bottom 0.3s ease;
+        }
+
+        .faculty-card:hover .faculty-social {
+            bottom: 0;
+        }
+
+        .faculty-social a {
+            color: white;
+            width: 35px;
+            height: 35px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .faculty-social a:hover {
+            background: white;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .faculty-info { padding: 2rem 1.5rem; }
+        .faculty-info h3 { font-size: 1.4rem; margin-bottom: 0.2rem; }
+        .faculty-designation { color: var(--primary-color); font-weight: 500; margin-bottom: 1rem; display: block; }
+        
+        .faculty-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- [Paste Navbar Here] -->
+
+    <header class="page-header">
+        <h1>Meet Our Experts</h1>
+        <p>Learn from industry veterans and accomplished academics.</p>
+    </header>
+
+    <section class="faculty-section">
+        <div class="faculty-grid fade-up">
+            <!-- Faculty 1 -->
+            <div class="faculty-card">
+                <div class="faculty-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dr. Sarah Jenkins">
+                    <div class="faculty-social">
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="faculty-info">
+                    <h3>Dr. Sarah Jenkins</h3>
+                    <span class="faculty-designation">Head of Computer Science</span>
+                    <div class="faculty-meta">
+                        <span><i class="fa-solid fa-graduation-cap"></i> Ph.D. in AI (MIT)</span>
+                        <span><i class="fa-solid fa-briefcase"></i> 15 Years Experience</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Faculty 2 -->
+            <div class="faculty-card">
+                <div class="faculty-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Prof. Michael Ross">
+                    <div class="faculty-social">
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="faculty-info">
+                    <h3>Prof. Michael Ross</h3>
+                    <span class="faculty-designation">Dean of Business Management</span>
+                    <div class="faculty-meta">
+                        <span><i class="fa-solid fa-graduation-cap"></i> MBA (Harvard)</span>
+                        <span><i class="fa-solid fa-briefcase"></i> 20 Years Experience</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Faculty 3 -->
+            <div class="faculty-card">
+                <div class="faculty-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1580820267682-426da823b514?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dr. Emily Chen">
+                    <div class="faculty-social">
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="faculty-info">
+                    <h3>Dr. Emily Chen</h3>
+                    <span class="faculty-designation">Associate Professor, Data Science</span>
+                    <div class="faculty-meta">
+                        <span><i class="fa-solid fa-graduation-cap"></i> Ph.D. in Data Science</span>
+                        <span><i class="fa-solid fa-briefcase"></i> 8 Years Experience</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Faculty 4 -->
+            <div class="faculty-card">
+                <div class="faculty-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Mr. David Kumar">
+                    <div class="faculty-social">
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="faculty-info">
+                    <h3>Mr. David Kumar</h3>
+                    <span class="faculty-designation">Industry Expert, Cyber Security</span>
+                    <div class="faculty-meta">
+                        <span><i class="fa-solid fa-graduation-cap"></i> M.Tech, CISSP</span>
+                        <span><i class="fa-solid fa-briefcase"></i> 12 Years Ex-Google</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- You can add more cards here to fill the grid -->
+        </div>
+    </section>
+
+    <!-- [Paste Footer Here] -->
+    <script src="js/script.js"></script>
+</body>
+</html>
