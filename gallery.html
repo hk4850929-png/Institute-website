@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Gallery | Nexus Institute</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-header {
+            padding: 10rem 5% 4rem;
+            background: linear-gradient(rgba(15,23,42,0.8), rgba(15,23,42,0.8)), url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: white;
+            text-align: center;
+        }
+        
+        .gallery-container { padding: 5rem 5%; background: var(--bg-color); }
+        
+        .filter-btns {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            background: transparent;
+            border: 2px solid var(--border-color);
+            border-radius: 50px;
+            color: var(--text-main);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .gallery-item {
+            position: relative;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(37, 99, 235, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        .gallery-overlay i {
+            color: white;
+            font-size: 2rem;
+            transform: scale(0);
+            transition: transform 0.3s ease 0.1s;
+        }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+        .gallery-item:hover .gallery-overlay i { transform: scale(1); }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .lightbox.active { opacity: 1; pointer-events: all; }
+        .lightbox img { max-width: 90%; max-height: 90vh; border-radius: 8px; }
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- [Paste Navbar Here] -->
+
+    <header class="page-header">
+        <h1>Campus Gallery</h1>
+        <p>Take a glimpse into the vibrant life and infrastructure at Nexus.</p>
+    </header>
+
+    <section class="gallery-container">
+        <!-- Filter Buttons -->
+        <div class="filter-btns fade-up">
+            <button class="filter-btn active" data-filter="all">All Photos</button>
+            <button class="filter-btn" data-filter="campus">Campus</button>
+            <button class="filter-btn" data-filter="labs">Labs</button>
+            <button class="filter-btn" data-filter="events">Events</button>
+            <button class="filter-btn" data-filter="sports">Sports</button>
+        </div>
+
+        <!-- Image Grid -->
+        <div class="gallery-grid fade-up">
+            <div class="gallery-item" data-category="campus">
+                <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&w=800&q=80" alt="Campus Building">
+                <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-category="labs">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&w=800&q=80" alt="Computer Lab">
+                <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-category="events">
+                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&w=800&q=80" alt="Tech Seminar">
+                <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-category="sports">
+                <img src="https://images.unsplash.com/photo-1526676037777-05a232554f77?ixlib=rb-4.0.3&w=800&q=80" alt="Sports Arena">
+                <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-category="campus">
+                <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&w=800&q=80" alt="Library">
+                <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-category="labs">
+                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&w=800&q=80" alt="Robotics Lab">
+                <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose"><i class="fa-solid fa-xmark"></i></button>
+        <img src="" alt="Lightbox Preview" id="lightboxImg">
+    </div>
+
+    <!-- [Paste Footer Here] -->
+    
+    <script src="js/script.js"></script>
+    <script>
+        // Gallery Filter Logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Lightbox Logic
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxClose = document.getElementById('lightboxClose');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('img').getAttribute('src');
+                lightboxImg.setAttribute('src', imgSrc);
+                lightbox.classList.add('active');
+            });
+        });
+
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        // Close lightbox on clicking outside the image
+        lightbox.addEventListener('click', (e) => {
+            if(e.target === lightbox) {
+                lightbox.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
