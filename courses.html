@@ -1,70 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Courses -  EduTech Institute</title>
-    <link rel="stylesheet" href="style.css?v=100">
+    <title>Our Courses | Nexus Institute</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-header {
+            padding: 10rem 5% 4rem;
+            background: linear-gradient(rgba(15,23,42,0.8), rgba(15,23,42,0.8)), url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: white;
+            text-align: center;
+        }
+        .courses-section { padding: 5rem 5%; background: var(--bg-color); }
+        .course-card {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        .course-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 0;
+        }
+        .course-content { padding: 2rem; }
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .course-title { margin-bottom: 1rem; font-size: 1.5rem; }
+        .course-desc { color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem; }
+        .course-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+        .course-fee { font-weight: 700; font-size: 1.2rem; color: var(--secondary-color); }
+    </style>
 </head>
 <body>
+    <!-- [Paste Navbar Here] -->
 
-    <header>
-        <nav>
-            <a href="courses.html" class="logo">
-    <!-- Clean Graduation Cap Icon SVG -->
-    <svg class="logo-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-        <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-    </svg>
-    <span>Edu Tech Institute</span>
-</a>
-
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="courses.html" class="active">Courses</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="contact.html" class="btn-shine btn-login">Apply Now</a></li>
-            </ul>
-        </nav>
+    <header class="page-header">
+        <h1>Premium Courses</h1>
+        <p>Discover our industry-aligned programs designed to build your future.</p>
     </header>
 
-    <div class="container animate-up">
-        <h1 style="text-align: center; margin-bottom: 3rem;" class="gradient-text">Explore Our Programs</h1>
-
-        <div class="grid-3">
-            <!-- Course 1 -->
-            <div class="glass-card course-card">
-                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" alt="Frontend">
-                <div class="card-body">
-                    <h3>Fullstack Web Development</h3>
-                    <a href="contact.html" class="btn-shine" style="width: 100%; text-align: center;">Apply Now</a>
+    <section class="courses-section">
+        <div class="grid-6 fade-up">
+            <!-- BCA Course -->
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="BCA" class="course-img">
+                <div class="course-content">
+                    <div class="course-meta">
+                        <span><i class="fa-regular fa-clock"></i> 3 Years</span>
+                        <span><i class="fa-solid fa-graduation-cap"></i> UG Program</span>
+                    </div>
+                    <h3 class="course-title">Bachelor of Computer Applications (BCA)</h3>
+                    <p class="course-desc">Master software development, programming languages, and database management with practical projects.</p>
+                    <div class="course-footer">
+                        <span class="course-fee">$4,500/yr</span>
+                        <a href="#" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Apply Now</a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Course 2 -->
-            <div class="glass-card course-card">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Data Science">
-                <div class="card-body">
-                    <h3>Data Science & AI</h3>
-                    <a href="contact.html" class="btn-shine" style="width: 100%; text-align: center;">Apply Now</a>
+            <!-- BBA Course -->
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="BBA" class="course-img">
+                <div class="course-content">
+                    <div class="course-meta">
+                        <span><i class="fa-regular fa-clock"></i> 3 Years</span>
+                        <span><i class="fa-solid fa-graduation-cap"></i> UG Program</span>
+                    </div>
+                    <h3 class="course-title">Bachelor of Business Administration (BBA)</h3>
+                    <p class="course-desc">Develop leadership skills and business acumen to thrive in modern corporate environments.</p>
+                    <div class="course-footer">
+                        <span class="course-fee">$4,200/yr</span>
+                        <a href="#" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Apply Now</a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Course 3 -->
-            <div class="glass-card course-card">
-                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80" alt="Design">
-                <div class="card-body">
-                    <h3>UI/UX Product Architecture</h3>
-                    <a href="contact.html" class="btn-shine" style="width: 100%; text-align: center;">Apply Now</a>
+            <!-- MCA Course -->
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="MCA" class="course-img">
+                <div class="course-content">
+                    <div class="course-meta">
+                        <span><i class="fa-regular fa-clock"></i> 2 Years</span>
+                        <span><i class="fa-solid fa-award"></i> PG Program</span>
+                    </div>
+                    <h3 class="course-title">Master of Computer Applications (MCA)</h3>
+                    <p class="course-desc">Advanced study in software engineering, AI, and cloud computing for aspiring tech leaders.</p>
+                    <div class="course-footer">
+                        <span class="course-fee">$5,500/yr</span>
+                        <a href="#" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Apply Now</a>
+                    </div>
                 </div>
             </div>
+            
+            <!-- Add B.Com, BA, and MBA cards similarly to complete the 6 cards -->
         </div>
-    </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2026  Edu Tech Institute. All Rights Reserved.</p>
-    </footer>
-
+    <!-- [Paste Footer Here] -->
+    <script src="js/script.js"></script>
 </body>
 </html>
