@@ -6,7 +6,7 @@
     <title>Our Faculty | Nexus Institute</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
     <style>
         .page-header {
             padding: 10rem 5% 4rem;
@@ -108,7 +108,25 @@
     </style>
 </head>
 <body>
-    <!-- [Paste Navbar Here] -->
+    <div id="scroll-progress"></div>
+
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="index.html"><h2><i class="fa-solid fa-graduation-cap"></i> Nexus</h2></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="faculty.html">Faculty</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button id="theme-toggle" aria-label="Toggle Dark Mode"><i class="fa-solid fa-moon"></i></button>
+            <a href="#" class="btn btn-primary">Apply Now</a>
+            <button class="hamburger"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </nav>
 
     <header class="page-header">
         <h1>Meet Our Experts</h1>
@@ -117,7 +135,6 @@
 
     <section class="faculty-section">
         <div class="faculty-grid fade-up">
-            <!-- Faculty 1 -->
             <div class="faculty-card">
                 <div class="faculty-img-wrapper">
                     <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dr. Sarah Jenkins">
@@ -137,7 +154,6 @@
                 </div>
             </div>
 
-            <!-- Faculty 2 -->
             <div class="faculty-card">
                 <div class="faculty-img-wrapper">
                     <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Prof. Michael Ross">
@@ -157,7 +173,6 @@
                 </div>
             </div>
 
-            <!-- Faculty 3 -->
             <div class="faculty-card">
                 <div class="faculty-img-wrapper">
                     <img src="https://images.unsplash.com/photo-1580820267682-426da823b514?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dr. Emily Chen">
@@ -177,7 +192,6 @@
                 </div>
             </div>
 
-            <!-- Faculty 4 -->
             <div class="faculty-card">
                 <div class="faculty-img-wrapper">
                     <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Mr. David Kumar">
@@ -196,12 +210,45 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- You can add more cards here to fill the grid -->
         </div>
     </section>
 
-    <!-- [Paste Footer Here] -->
-    <script src="js/script.js"></script>
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="nav-logo" style="margin-bottom: 1rem;">
+                    <a href="index.html"><h2><i class="fa-solid fa-graduation-cap" style="color: white;"></i> Nexus</h2></a>
+                </div>
+                <p style="color: #94a3b8;">Empowering the next generation of leaders with world-class education.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html">Our Courses</a></li>
+                    <li><a href="faculty.html">Faculty Directory</a></li>
+                    <li><a href="gallery.html">Campus Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <ul style="color: #cbd5e1;">
+                    <li><i class="fa-solid fa-location-dot"></i> 123 Education Hub, Tech City</li>
+                    <li><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</li>
+                    <li><i class="fa-solid fa-envelope"></i> info@nexusinstitute.edu</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Nexus Institute. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
