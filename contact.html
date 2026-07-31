@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us -  EduTech institute</title>
+    <link rel="stylesheet" href="style.css?v=100">
+</head>
+<body>
+
+    <header>
+        <nav>
+           <a href="contact.html" class="logo">
+    <!-- Clean Graduation Cap Icon SVG -->
+    <svg class="logo-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+        <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+    </svg>
+    <span>Edu Tech Institute</span>
+</a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="contact.html" class="btn-shine btn-login">Apply Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container animate-up">
+        <h1 style="text-align: center; margin-bottom: 2rem;" class="gradient-text">Get In Touch</h1>
+
+        <form id="contactForm" onsubmit="handleFormSubmit(event)">
+    <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" id="name" class="form-control" placeholder="John Doe" required>
+    </div>
+    <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" class="form-control" placeholder="john@example.com" required>
+    </div>
+    <div class="form-group">
+        <label>Subject</label>
+        <input type="text" class="form-control" placeholder="Admission Inquiry" required>
+    </div>
+    <div class="form-group">
+        <label>Message</label>
+        <textarea class="form-control" rows="4" placeholder="Your query..." required></textarea>
+    </div>
+    <button type="submit" class="btn-shine" style="width: 100%;">Submit Form</button>
+</form>
+
+<!-- Popup Notification Script -->
+<script>
+    function handleFormSubmit(event) {
+        event.preventDefault(); // Page refresh aur POST request ko rokega
+        const userName = document.getElementById('name').value;
+        alert(`Thank you ${userName}! Your application has been submitted successfully.`);
+        document.getElementById('contactForm').reset(); // Form clear kar dega
+    }
+</script>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026  EduTech Institute. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
