@@ -45,21 +45,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 3. Scroll Progress Bar
-    window.addEventListener('scroll', () => {
+   // 3. Scroll Progress Bar
+window.addEventListener('scroll', () => {
+    const progressBar = document.getElementById('scroll-progress');
+    
+    // Only run if the element actually exists on the page
+    if (progressBar) {
         const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrolled = (winScroll / height) * 100;
-        document.getElementById('scroll-progress').style.width = scrolled + '%';
-    });
-
-    // 4. Scroll Animations (Fade Up)
-    const fadeElements = document.querySelectorAll('.fade-up');
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
+        progressBar.style.width = scrolled + '%';
+    }
+});
 
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -102,12 +99,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 6. Active Navbar Links
-    const currentPage = window.location.pathname.split("/").pop();
-    const navItems = document.querySelectorAll('.nav-links a');
-    navItems.forEach(link => {
-        if(link.getAttribute('href') === currentPage || (currentPage === '' && link.getAttribute('href') === 'index.html')) {
-            link.classList.add('active');
-        }
-    });
+   // 6. Active Navbar Links
+const currentPage = window.location.pathname.split("/").pop();
+const navItems = document.querySelectorAll('.nav-links a');
+
+// Clear all active classes first
+navItems.forEach(link => link.classList.remove('active'));
+
+navItems.forEach(link => {
+    if(link.getAttribute('href') === currentPage || (currentPage === '' && link.getAttribute('href') === 'index.html')) {
+        link.classList.add('active');
+    }
 });
