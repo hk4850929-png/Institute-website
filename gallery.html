@@ -6,7 +6,7 @@
     <title>Campus Gallery | Nexus Institute</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
     <style>
         .page-header {
             padding: 10rem 5% 4rem;
@@ -105,7 +105,25 @@
     </style>
 </head>
 <body>
-    <!-- [Paste Navbar Here] -->
+    <div id="scroll-progress"></div>
+
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="index.html"><h2><i class="fa-solid fa-graduation-cap"></i> Nexus</h2></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="faculty.html">Faculty</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button id="theme-toggle" aria-label="Toggle Dark Mode"><i class="fa-solid fa-moon"></i></button>
+            <a href="#" class="btn btn-primary">Apply Now</a>
+            <button class="hamburger"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </nav>
 
     <header class="page-header">
         <h1>Campus Gallery</h1>
@@ -157,9 +175,44 @@
         <img src="" alt="Lightbox Preview" id="lightboxImg">
     </div>
 
-    <!-- [Paste Footer Here] -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="nav-logo" style="margin-bottom: 1rem;">
+                    <a href="index.html"><h2><i class="fa-solid fa-graduation-cap" style="color: white;"></i> Nexus</h2></a>
+                </div>
+                <p style="color: #94a3b8;">Empowering the next generation of leaders with world-class education.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html">Our Courses</a></li>
+                    <li><a href="faculty.html">Faculty Directory</a></li>
+                    <li><a href="gallery.html">Campus Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <ul style="color: #cbd5e1;">
+                    <li><i class="fa-solid fa-location-dot"></i> 123 Education Hub, Tech City</li>
+                    <li><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</li>
+                    <li><i class="fa-solid fa-envelope"></i> info@nexusinstitute.edu</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Nexus Institute. All Rights Reserved.</p>
+        </div>
+    </footer>
     
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
     <script>
         // Gallery Filter Logic
         const filterBtns = document.querySelectorAll('.filter-btn');
@@ -167,7 +220,6 @@
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Remove active class from all buttons
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
 
@@ -200,7 +252,6 @@
             lightbox.classList.remove('active');
         });
 
-        // Close lightbox on clicking outside the image
         lightbox.addEventListener('click', (e) => {
             if(e.target === lightbox) {
                 lightbox.classList.remove('active');
